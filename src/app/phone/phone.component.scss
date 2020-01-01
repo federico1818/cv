@@ -1,0 +1,26 @@
+.phone {
+
+    & {
+        height: 100%;
+    }
+    
+}
+
+.screen {
+    
+    & {
+        align-items: center;
+        display: grid;
+        grid-template-rows: 24px 1fr 72px 48px;
+        height: 100%;
+        padding: 8px;
+        position: relative;
+    }
+
+    &.background {
+        background-image: url('/assets/img/mountain.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+}

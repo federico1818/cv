@@ -14,7 +14,9 @@ import { PhoneComponent } from './phone/phone.component'
 import { NotificationBarComponent } from './notification-bar/notification-bar.component'
 import { DockComponent } from './dock/dock.component';
 import { WorksComponent } from './works/works.component';
-import { StudiesComponent } from './studies/studies.component'
+import { StudiesComponent } from './studies/studies.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { ClockComponent } from './clock/clock.component'
 
 @NgModule({
     declarations: [
@@ -24,6 +26,8 @@ import { StudiesComponent } from './studies/studies.component'
         DockComponent,
         WorksComponent,
         StudiesComponent,
+        NavigationBarComponent,
+        ClockComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,11 @@
+@import "~src/assets/scss/colors";
+
+.dock-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    justify-items: center;
+}
+
+.dock-link {
+    background-color: $color-bg-button;
+}
