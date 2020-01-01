@@ -1,0 +1,26 @@
+@import "~src/assets/scss/colors";
+
+.navigation-bar-list {
+
+    & {
+        display: grid;
+        justify-items: center;
+    }
+
+    & .navigation-bar-link {
+        color: $color-navigation-icon;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    & .navigation-bar-link .mat-icon {
+        align-items: center;
+        border: 1px solid;
+        border-radius: 50%;
+        display: inline-flex;
+        height: 32px;
+        width: 32px;
+        justify-content: center;
+    }
+
+}
