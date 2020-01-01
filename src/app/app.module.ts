@@ -12,11 +12,14 @@ import { MaterialModule } from './material/material.module'
 
 import { PhoneComponent } from './phone/phone.component'
 import { NotificationBarComponent } from './notification-bar/notification-bar.component'
-import { DockComponent } from './dock/dock.component';
-import { WorksComponent } from './works/works.component';
-import { StudiesComponent } from './studies/studies.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { DockComponent } from './dock/dock.component'
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component'
 import { ClockComponent } from './clock/clock.component'
+import { SkillsComponent } from './skills/skills.component'
+import { ExperienceComponent } from './experience/experience.component'
+import { EducationComponent } from './education/education.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HobbiesComponent } from './hobbies/hobbies.component'
 
 @NgModule({
     declarations: [
@@ -24,10 +27,13 @@ import { ClockComponent } from './clock/clock.component'
         PhoneComponent,
         NotificationBarComponent,
         DockComponent,
-        WorksComponent,
-        StudiesComponent,
         NavigationBarComponent,
         ClockComponent,
+        SkillsComponent,
+        ExperienceComponent,
+        EducationComponent,
+        ProfileComponent,
+        HobbiesComponent
     ],
     imports: [
         BrowserModule,

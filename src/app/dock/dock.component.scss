@@ -1,4 +1,5 @@
 @import "~src/assets/scss/colors";
+@import "~src/assets/scss/sizes";
 
 .dock-list {
     display: grid;
@@ -7,5 +8,17 @@
 }
 
 .dock-link {
-    background-color: $color-bg-button;
+    
+    & {
+        background-color: $color-bg-button;
+        height: $dock-button-size;
+        width: $dock-button-size;
+    }
+
+    &.center {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }

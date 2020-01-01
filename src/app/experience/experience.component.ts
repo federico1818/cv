@@ -3,14 +3,14 @@ import { AngularFirestore } from '@angular/fire/firestore'
 import { Observable } from 'rxjs'
 
 @Component({
-    selector: 'app-works',
-    templateUrl: './works.component.html',
-    styleUrls: ['./works.component.scss']
+    selector: 'app-experience',
+    templateUrl: './experience.component.html',
+    styleUrls: ['./experience.component.scss']
 })
 
-export class WorksComponent implements OnInit {
+export class ExperienceComponent implements OnInit {
     public works: Observable<any[]>
-
+    
     constructor(
         private db: AngularFirestore
     ) {

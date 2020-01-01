@@ -1,17 +1,32 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { WorksComponent } from './../app/works/works.component'
-import { StudiesComponent } from './../app/studies/studies.component'
+import { ExperienceComponent } from './../app/experience/experience.component'
+import { EducationComponent } from './../app/education/education.component'
+import { SkillsComponent } from './../app/skills/skills.component'
+import { HobbiesComponent } from './../app/hobbies/hobbies.component'
+import { ProfileComponent } from './../app/profile/profile.component'
 
 const routes: Routes = [
     {
-        path: 'works',
-        component: WorksComponent
+        path: 'experience',
+        component: ExperienceComponent
     },
     {
-        path: 'studies',
-        component: StudiesComponent
+        path: 'education',
+        component: EducationComponent
+    },
+    {
+        path: 'skills',
+        component: SkillsComponent
+    },
+    {
+        path: 'hobbies',
+        component: HobbiesComponent
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent
     }
 ]
 

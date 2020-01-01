@@ -12,6 +12,12 @@
         background-color: transparent;
         box-shadow: none;
     }
+
+    & .navigation-bar-link.center{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
     
     & .navigation-bar-link .mat-icon {
         align-items: center;
