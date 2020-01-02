@@ -11,7 +11,6 @@
 .screen {
     
     & {
-        align-items: center;
         display: grid;
         grid-template-rows: $height-notification-bar 1fr 80px $height-navigation-bar;
         height: 100%;
