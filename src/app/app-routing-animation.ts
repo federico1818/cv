@@ -5,16 +5,17 @@ export const animation = trigger('routeAnimations', [
         query(':enter, :leave', [
             style({
                 position: 'absolute',
-                opacity: 0,
-                top: 0,
                 left: 0,
-                width: '100%'
+                width: '100%',
+                opacity: 0,
+                transform: 'scale(0) translateY(100%)'
             })
-        ], { optional: true }),
+        ], { optional: false }),
         query(':enter', [
             style({
-                left: '-100%'
+                opacity: 1,
+                transform: 'scale(1) translateY(0)'
             })
-        ], { optional: true })
+        ], { optional: false })
     ])
 ])

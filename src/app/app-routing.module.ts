@@ -10,23 +10,38 @@ import { ProfileComponent } from './../app/profile/profile.component'
 const routes: Routes = [
     {
         path: 'experience',
-        component: ExperienceComponent
+        component: ExperienceComponent,
+        data: {
+            animation: 'experience'
+        }
     },
     {
         path: 'education',
-        component: EducationComponent
+        component: EducationComponent,
+        data: {
+            animation: 'education'
+        }
     },
     {
         path: 'skills',
-        component: SkillsComponent
+        component: SkillsComponent,
+        data: {
+            animation: 'skills'
+        }
     },
     {
         path: 'hobbies',
-        component: HobbiesComponent
+        component: HobbiesComponent,
+        data: {
+            animation: 'hobbies'
+        }
     },
     {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        data: {
+            animation: 'profile'
+        }
     }
 ]
 

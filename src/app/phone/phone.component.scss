@@ -25,6 +25,15 @@
 
 }
 
+.app-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+    top: $height-notification-bar;
+}
+
 .router-outlet-container {
     position: relative;
+    height: 100%;
 }

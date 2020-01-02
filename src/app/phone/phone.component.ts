@@ -6,7 +6,7 @@ import { animation } from './../app-routing-animation'
     selector: 'app-phone',
     templateUrl: './phone.component.html',
     styleUrls: ['./phone.component.scss'],
-    //animations: [ animation ]
+    animations: [ animation ]
 })
 
 export class PhoneComponent implements OnInit {
@@ -17,7 +17,7 @@ export class PhoneComponent implements OnInit {
     }
 
     prepareRoute(outlet: RouterOutlet) {
-        return outlet && outlet.activatedRouteData;
+        return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
     }
 
 }
