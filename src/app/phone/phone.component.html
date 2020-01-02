@@ -2,9 +2,12 @@
     <div class="screen background">
         <app-notification-bar></app-notification-bar>
         <main>
-            <router-outlet></router-outlet>
         </main>
         <app-dock></app-dock>
         <app-navigation-bar></app-navigation-bar>
+    </div>
+    <!-- <div [@routeAnimations]="prepareRoute(outlet)" class="router-outlet-container"> -->
+    <div>
+        <router-outlet #outlet="outlet"></router-outlet>
     </div>
 </div>
