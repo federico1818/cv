@@ -1,4 +1,4 @@
-<div class="phone case">
+<div class="phone case" [ngClass]="{ 'active': !isHome() }">
     <div class="screen background">
         <app-notification-bar></app-notification-bar>
         <main>
@@ -6,9 +6,7 @@
         <app-dock></app-dock>
         <app-navigation-bar></app-navigation-bar>
     </div>
-    <div class="app-container">
-        <div [@routeAnimations]="prepareRoute(outlet)" class="router-outlet-container">
-            <router-outlet #outlet="outlet"></router-outlet>
-        </div>
+    <div [@routeAnimations]="prepareRoute(outlet)" class="router-outlet-container">
+        <router-outlet #outlet="outlet"></router-outlet>
     </div>
 </div>

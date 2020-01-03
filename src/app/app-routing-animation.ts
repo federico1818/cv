@@ -1,21 +1,29 @@
-import { trigger, transition, query, style, animate } from '@angular/animations'
+import { trigger, transition, style, query, animate } from '@angular/animations'
 
-export const animation = trigger('routeAnimations', [
+export const animations = trigger('routeAnimations', [
     transition('* <=> *', [
         query(':enter, :leave', [
             style({
-                position: 'absolute',
+                position: 'fixed',
+                top: '24px',
                 left: 0,
                 width: '100%',
-                opacity: 0,
-                transform: 'scale(0) translateY(100%)'
+                bottom: '56px',
             })
-        ], { optional: false }),
+        ], { optional: true }),
+        query(':leave', [
+            animate('100ms linear', style({
+                transform: 'translateY(100%)',
+            }))
+        ], { optional: true }),
         query(':enter', [
             style({
-                opacity: 1,
-                transform: 'scale(1) translateY(0)'
-            })
-        ], { optional: false })
+                transform: 'scale(0)',
+                transformOrigin: 'bottom',
+            }),
+            animate('200ms linear', style({
+                transform: 'scale(1)',
+            }))
+        ], { optional: true }),
     ])
 ])

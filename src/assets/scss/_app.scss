@@ -2,7 +2,11 @@
 
 .app {
     & {
+        position: fixed;
+        top: $height-notification-bar; 
+        bottom: $height-navigation-bar;
         background-color: $app-bg-color;
-        z-index: 1;
+        left: 0;
+        right: 0;
     }
 }

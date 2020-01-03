@@ -1,11 +1,21 @@
 @import "~src/assets/scss/sizes";
 
+.router-outlet-container {
+    & {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: $height-navigation-bar;
+    }
+
+}
+
 .phone {
 
     & {
         height: 100%;
     }
-    
+
 }
 
 .screen {
@@ -23,17 +33,4 @@
         background-position: center;
     }
 
-}
-
-.app-container {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 200px;
-    top: $height-notification-bar;
-}
-
-.router-outlet-container {
-    position: relative;
-    height: 100%;
 }
