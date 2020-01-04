@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core'
 import { RouterOutlet, Router, NavigationStart } from '@angular/router'
 import { animations } from './../app-routing-animation'
 import { filter } from 'rxjs/operators'
-import { url } from 'inspector'
 
 @Component({
     selector: 'app-phone',
