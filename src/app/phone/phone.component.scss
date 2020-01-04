@@ -1,3 +1,4 @@
+@import "~src/assets/scss/colors";
 @import "~src/assets/scss/sizes";
 
 .router-outlet-container {
@@ -10,10 +11,22 @@
 
 }
 
+.app-notification-bar {
+    transition: background-color 200ms linear;
+}
+
 .phone {
 
     & {
         height: 100%;
+    }
+
+    &.active .app-navigation-bar {
+        background-color: $navigation-bar-bg-color;
+    }
+
+    &.active .app-notification-bar {
+        background-color: $app-primary-color-dark;
     }
 
 }
