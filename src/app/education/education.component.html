@@ -2,4 +2,13 @@
     <mat-toolbar color="primary">
         <span>Education</span>
     </mat-toolbar>
+    
+    <ul class="list">
+        <li class="list-item" *ngFor="let study of studies | async">
+            <img src="{{ study.image }}">
+            <div>{{ study.degree }}</div>
+            <div>{{ study.date_start.toDate() | date: 'yyyy' }}</div>
+            <div>{{ study.date_end.toDate() | date: 'yyyy' }}</div>
+        </li>
+    </ul>
 </section>
