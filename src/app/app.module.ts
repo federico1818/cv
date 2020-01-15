@@ -19,7 +19,8 @@ import { SkillsComponent } from './skills/skills.component'
 import { ExperienceComponent } from './experience/experience.component'
 import { EducationComponent } from './education/education.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HobbiesComponent } from './hobbies/hobbies.component'
+import { HobbiesComponent } from './hobbies/hobbies.component';
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { HobbiesComponent } from './hobbies/hobbies.component'
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule,
-        MaterialModule
+        MaterialModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
     providers: [],
     bootstrap: [AppComponent]
