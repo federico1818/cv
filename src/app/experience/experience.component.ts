@@ -14,7 +14,7 @@ export class ExperienceComponent implements OnInit {
     constructor(
         private db: AngularFirestore
     ) {
-        this.works = this.db.collection('works').valueChanges()
+        this.works = this.db.collection('experience').valueChanges()
     }
 
     ngOnInit() {
