@@ -20,7 +20,9 @@ import { ExperienceComponent } from './experience/experience.component'
 import { EducationComponent } from './education/education.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
-import { ServiceWorkerModule } from '@angular/service-worker'
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
+import { ExperienceListComponent } from './experience-list/experience-list.component'
 
 @NgModule({
     declarations: [
@@ -34,7 +36,9 @@ import { ServiceWorkerModule } from '@angular/service-worker'
         ExperienceComponent,
         EducationComponent,
         ProfileComponent,
-        HobbiesComponent
+        HobbiesComponent,
+        ExperienceDetailComponent,
+        ExperienceListComponent
     ],
     imports: [
         BrowserModule,
