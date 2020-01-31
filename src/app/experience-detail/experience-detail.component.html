@@ -3,6 +3,10 @@
         <span>{{ (work | async)?.company }}</span>
     </mat-toolbar>
     
-    
-</section>
+    <mat-list>
+        <mat-list-item *ngFor="let project of projects | async">
+            <h4>{{ project.name }}</h4>
+        </mat-list-item>
+    </mat-list>
 
+</section>
