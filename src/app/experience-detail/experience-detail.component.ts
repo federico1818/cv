@@ -13,6 +13,7 @@ import { map } from 'rxjs/operators'
 export class ExperienceDetailComponent implements OnInit {
     public work
     public projects
+    public technologies
 
     constructor(
         private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class ExperienceDetailComponent implements OnInit {
         
         this.work = workRef.valueChanges()
         this.projects = workRef.collection(`projects`).valueChanges()
+        this.technologies = workRef.collection(`technologies`).valueChanges()
     }
 
     ngOnInit() {

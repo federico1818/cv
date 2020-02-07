@@ -7,8 +7,8 @@
         <img class="list-item-image" src="/assets/img/{{ work.image }}" alt="{{ work.company }}">
         <h4 class="list-item-title">{{ work.position }}</h4>
         <div class="list-item-subtitle list-item-dates">
-            <div class="date-start">{{ work.date_start.toDate() | date: 'yyyy' }}</div>
-            <div class="date-end">{{ work.date_end.toDate() | date: 'yyyy' }}</div>
+            <time class="date-start">{{ work.date_start.toDate() | date: 'yyyy' }}</time>
+            <time class="date-end">{{ work.date_end.toDate() | date: 'yyyy' }}</time>
         </div>
         <div class="list-item-description">{{ work.company }}</div>
         <a [routerLink]="['./', work.id]" class="list-item-navigation" mat-icon-button aria-label="Details">
