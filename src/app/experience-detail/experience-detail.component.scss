@@ -12,6 +12,27 @@
     justify-content: space-between;
 }
 
+.section {
+    padding: 24px 16px;
+}
+
+.project-description {
+    margin: 0;
+    font-size: 12px;
+}
+
+.project-item {
+    margin-bottom: 16px; 
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-name {
+    margin-bottom: 0;
+}
+
 .work-image {
     position: absolute;
     height: 154px;
@@ -20,10 +41,6 @@
     margin: auto;
     opacity: 0.6;
     top: 8px;
-}
-
-.section {
-    padding: 0 16px;
 }
 
 .work-dates {

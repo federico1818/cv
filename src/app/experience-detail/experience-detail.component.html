@@ -1,4 +1,4 @@
-<section class="app">
+<div class="app">
     <mat-toolbar class="mat-toolbar-work">
         <mat-toolbar-row class="mat-toolbar-row-first">
             <a mat-icon-button aria-label="Back" [routerLink]="['/experience/']">
@@ -13,26 +13,28 @@
                 <time class="work-date-end">{{ (work | async)?.date_end.toDate() | date: 'yyyy' }}</time>
             </div>
         </mat-toolbar-row>
-        <img class="work-image" src="/assets/img/experience/detail/{{ (work | async)?.image }}" alt="{{ (work | async)?.company }}">
+        <img class="work-image" src="{{ (work | async)?.image }}" alt="{{ (work | async)?.company }}">
     </mat-toolbar>
     
-    <section class="section section-projects">
-        <h3>Projects</h3>
-        <ul>
-            <li *ngFor="let project of projects | async">
-                <h4 class="project-name">{{ project.name }}</h4>
-                <p>{{ project.description }}</p>
+    <section class="section section-projects text">
+        <h2 mat-subheader class="mat-subheader-section">Projects</h2>
+        <ul class="text">
+            <li class="project-item" *ngFor="let project of projects | async">
+                <h3 class="project-name mat-h3">{{ project.name }}</h3>
+                <p class="project-description">{{ project.description }}</p>
             </li>
         </ul>
     </section>
 
     <mat-divider></mat-divider>
 
-    <mat-list>
-        <h3 mat-subheader>Technologies</h3>
-        <mat-list-item *ngFor="let technology of technologies | async">
-            <h4 mat-line>{{ technology.name }}</h4>
-        </mat-list-item>
-    </mat-list>
+    <section class="section section-technologies">
+        <h2 mat-subheader class="mat-subheader-section">Technologies</h2>
+        <ul class="text">
+            <li *ngFor="let technology of technologies | async">
+                
+            </li>
+        </ul>
+    </section>
 
-</section>
+</div>

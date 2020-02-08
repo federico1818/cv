@@ -10,12 +10,15 @@ import { map } from 'rxjs/operators'
 })
 
 export class ExperienceListComponent implements OnInit {
-
+    public loading: boolean
     public works: Observable<any[]>
     
     constructor(
         private db: AngularFirestore
-    ) {
+    ) {}
+    
+    ngOnInit() {
+        this.loading = true
         this.works = this.db.collection('experience').snapshotChanges().pipe(
             map(actions => actions.map(a => {
                 return {
@@ -23,10 +26,8 @@ export class ExperienceListComponent implements OnInit {
                     ...a.payload.doc.data() as any
                 }
             }))
-          );
-    }
-
-    ngOnInit() {
+        );
+        this.works.subscribe(() => this.loading = false)
     }
 
 }

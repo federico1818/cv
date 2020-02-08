@@ -18,8 +18,25 @@
     }
 }
 
+@mixin text($theme) {
+    $config: mat-typography-config();
+    $foreground: map-get($theme, foreground);
+
+    .text {
+        font-family: mat-font-family($config);
+    }
+
+    .mat-subheader-section {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 0 8px 0;
+        color: mat-color($foreground, secondary-text);
+    }
+      
+}
+
 $custom-primary-color: (
-    50 : #e2e3e6,
+    50 : #96979b,
     100 : #b8b9c0,
     200 : #888b97,
     300 : #585d6d,
@@ -64,3 +81,4 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
 @include phone-theme($app-theme);
 @include dock($app-theme);
+@include text($app-theme);
