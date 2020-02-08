@@ -13,7 +13,7 @@
                 <time class="work-date-end">{{ (work | async)?.date_end.toDate() | date: 'yyyy' }}</time>
             </div>
         </mat-toolbar-row>
-        <img class="work-image" src="{{ (work | async)?.image }}" alt="{{ (work | async)?.company }}">
+        <img class="work-image" src="{{ (work | async)?.src }}" alt="{{ (work | async)?.company }}">
     </mat-toolbar>
     
     <section class="section section-projects text">
