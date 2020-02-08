@@ -1,18 +1,19 @@
 <section class="app">
-    <mat-toolbar>
+    <mat-toolbar class="mat-toolbar-work">
         <mat-toolbar-row class="mat-toolbar-row-first">
             <a mat-icon-button aria-label="Back" [routerLink]="['/experience/']">
                 <mat-icon>arrow_back</mat-icon>
             </a>
         </mat-toolbar-row>
-
-        <mat-toolbar-row>
+        
+        <mat-toolbar-row class="mat-toolbar-row-work">
             <span>{{ (work | async)?.company }}</span>
-            <div>
-                <time>{{ (work | async)?.date_end.toDate() | date: 'yyyy' }}</time>
-                <time>{{ (work | async)?.date_start.toDate() | date: 'yyyy' }}</time>
+            <div class="work-dates">
+                <time class="work-date-start">{{ (work | async)?.date_start.toDate() | date: 'yyyy' }}</time>
+                <time class="work-date-end">{{ (work | async)?.date_end.toDate() | date: 'yyyy' }}</time>
             </div>
         </mat-toolbar-row>
+        <img class="work-image" src="/assets/img/experience/detail/{{ (work | async)?.image }}" alt="{{ (work | async)?.company }}">
     </mat-toolbar>
     
     <section class="section section-projects">

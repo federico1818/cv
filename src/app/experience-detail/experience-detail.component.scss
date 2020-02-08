@@ -1,7 +1,40 @@
+.mat-toolbar-work {
+    position: relative;
+}
+
 .mat-toolbar-row-first {
+    height: 112px;
     padding: 0;
+    align-items: flex-start;
+}
+
+.mat-toolbar-row-work {
+    justify-content: space-between;
+}
+
+.work-image {
+    position: absolute;
+    height: 154px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0.6;
+    top: 8px;
 }
 
 .section {
     padding: 0 16px;
+}
+
+.work-dates {
+
+    & {
+        font-size: 12px;
+    }
+
+    & .work-date-start::after {
+        content: "-";
+        display: inline-flex;
+        margin: 0 3px;
+    }
 }

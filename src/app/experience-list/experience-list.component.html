@@ -4,7 +4,7 @@
 
 <ul class="list">
     <li class="list-item" *ngFor="let work of works | async">
-        <img class="list-item-image" src="/assets/img/{{ work.image }}" alt="{{ work.company }}">
+        <img class="list-item-image" src="/assets/img/{{ work.icon }}" alt="{{ work.company }}">
         <h4 class="list-item-title">{{ work.position }}</h4>
         <div class="list-item-subtitle list-item-dates">
             <time class="date-start">{{ work.date_start.toDate() | date: 'yyyy' }}</time>
