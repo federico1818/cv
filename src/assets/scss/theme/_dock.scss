@@ -1,0 +1,7 @@
+@mixin app-dock($theme) {
+    $foreground: map-get($theme, foreground);
+
+    .dock-link.mat-fab {
+        color: mat-color($foreground, text);
+    }
+}

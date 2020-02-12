@@ -8,7 +8,7 @@
         
         <mat-toolbar-row class="mat-toolbar-row-work">
             <span>{{ (work | async)?.company }}</span>
-            <div class="work-dates">
+            <div class="work-dates text-secondary">
                 <time class="work-date-start">{{ (work | async)?.date_start.toDate() | date: 'yyyy' }}</time>
                 <time class="work-date-end">{{ (work | async)?.date_end.toDate() | date: 'yyyy' }}</time>
             </div>
@@ -17,7 +17,7 @@
     </mat-toolbar>
     
     <section class="section section-projects text">
-        <h2 mat-subheader class="mat-subheader-section">Projects</h2>
+        <h2 mat-subheader class="mat-subheader-section text-secondary">Projects</h2>
         <ul class="text">
             <li class="project-item" *ngFor="let project of projects | async">
                 <h3 class="project-name mat-h3">{{ project.name }}</h3>
@@ -29,7 +29,7 @@
     <mat-divider></mat-divider>
 
     <section class="section section-technologies">
-        <h2 mat-subheader class="mat-subheader-section">Technologies</h2>
+        <h2 mat-subheader class="mat-subheader-section text-secondary">Technologies</h2>
         <ul class="text">
             <li *ngFor="let technology of technologies | async">
                 

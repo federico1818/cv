@@ -1,0 +1,23 @@
+@mixin app-text($theme) {
+    $config: mat-typography-config();
+    $foreground: map-get($theme, foreground);
+
+    .text {
+        font-family: mat-font-family($config);
+    }
+
+    .text-primary {
+        color: mat-color($foreground, text);
+    }
+
+    .text-secondary {
+        color: mat-color($foreground, secondary-text);
+    }
+
+    .mat-subheader-section {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 0 8px 0;
+    }
+      
+}

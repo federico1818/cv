@@ -1,0 +1,7 @@
+@mixin app-notification-bar($theme) {
+    $primary: map-get($theme, primary);
+
+    .phone.active .app-notification-bar {
+        background-color: mat-color($primary, 700);
+    }
+}

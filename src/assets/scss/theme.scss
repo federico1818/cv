@@ -1,39 +1,12 @@
 @import '~@angular/material/theming';
-
 @include mat-core();
 
-@mixin phone-theme($theme) {
-    $primary: map-get($theme, primary);
 
-    .phone.active .app-notification-bar {
-        background-color: mat-color($primary, 700);
-    }
-}
+@import './theme/notification-bar';
+@import './theme/dock';
+@import './theme/text';
 
-@mixin dock($theme) {
-    $foreground: map-get($theme, foreground);
 
-    .dock-link.mat-fab {
-        color: mat-color($foreground, text);
-    }
-}
-
-@mixin text($theme) {
-    $config: mat-typography-config();
-    $foreground: map-get($theme, foreground);
-
-    .text {
-        font-family: mat-font-family($config);
-    }
-
-    .mat-subheader-section {
-        font-size: 14px;
-        font-weight: 500;
-        margin: 0 0 8px 0;
-        color: mat-color($foreground, secondary-text);
-    }
-      
-}
 
 $custom-primary-color: (
     50 : #96979b,
@@ -69,7 +42,6 @@ $custom-primary-color: (
 );
 
 
-
 $app-primary: mat-palette($custom-primary-color);
 $app-accent:  mat-palette($mat-pink, A200, A100, A400);
 $app-warn:    mat-palette($mat-red);
@@ -79,6 +51,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 
 @include angular-material-theme($app-theme);
-@include phone-theme($app-theme);
-@include dock($app-theme);
-@include text($app-theme);
+
+@include app-notification-bar($app-theme);
+@include app-dock($app-theme);
+@include app-text($app-theme);
