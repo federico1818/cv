@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { AngularFirestore } from '@angular/fire/firestore'
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { Study } from '../models/study'
@@ -12,17 +12,22 @@ import { Study } from '../models/study'
 
 export class EducationComponent implements OnInit {
     public studies: Observable<Study[]>
+    public loading: boolean
+
+    private studiesRef: AngularFirestoreCollection
 
     constructor(
         private db: AngularFirestore
     ) {}
     
     ngOnInit() {
+        this.loading = true
         this.getStudies()
     }
     
     private getStudies(): void {
-        this.studies = this.db.collection('education').snapshotChanges().pipe(
+        this.studiesRef = this.db.collection('education', ref => ref.orderBy('date_start', 'desc')) 
+        this.studies = this.studiesRef.snapshotChanges().pipe(
             map(actions => actions.map(a => {
                 return Object.assign(new Study, {
                     id: a.payload.doc.id,
@@ -30,6 +35,7 @@ export class EducationComponent implements OnInit {
                 })
             }))
         )
+        this.studies.subscribe(() => this.loading = false)
     }
 
 }
