@@ -55,3 +55,20 @@
         margin: 0 3px;
     }
 }
+
+.technology-list {
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    margin: 16px 0;
+}
+
+.technology-image {
+    width: 48px;
+}
+
+.technology-name {
+    text-align: center;
+    font-size: 12px;
+}

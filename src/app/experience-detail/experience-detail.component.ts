@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { AngularFirestore } from '@angular/fire/firestore'
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { Work } from '../models/work'
+import { Technology } from '../models/technology'
 
 @Component({
     selector: 'app-experience-detail',
@@ -16,14 +17,24 @@ export class ExperienceDetailComponent implements OnInit {
     public projects: Observable<any[]>
     public technologies: Observable<any[]>
 
+    private workRef: AngularFirestoreDocument<Work>
+
     constructor(
         private route: ActivatedRoute,
         private db: AngularFirestore
-    ) {
+    ) {}
+
+    ngOnInit() {
         const id = this.route.snapshot.paramMap.get('id')
-        let workRef = this.db.collection(`experience`).doc<Work>(id)
-        
-        this.work = workRef.snapshotChanges().pipe(
+        this.workRef = this.db.collection(`experience`).doc<Work>(id)
+
+        this.getWork()
+        this.getProjects()
+        this.getTechnologies()
+    }
+
+    private getWork(): void {
+        this.work = this.workRef.snapshotChanges().pipe(
             map(w => {
                 return Object.assign(new Work, {
                     id: w.payload.id,
@@ -31,11 +42,21 @@ export class ExperienceDetailComponent implements OnInit {
                 })
             })
         )
-        this.projects = workRef.collection(`projects`).valueChanges()
-        this.technologies = workRef.collection(`technologies`).valueChanges()
     }
 
-    ngOnInit() {
+    private getProjects(): void {
+        this.projects = this.workRef.collection(`projects`).valueChanges()
+    }
+
+    private getTechnologies(): void {
+        this.technologies = this.workRef.collection('technologies').snapshotChanges().pipe(
+            map(actions => actions.map(a => {
+                return Object.assign(new Technology, {
+                    id: a.payload.doc.id,
+                    ...a.payload.doc.data() as any
+                })
+            }))
+        )
     }
 
 }

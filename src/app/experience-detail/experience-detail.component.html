@@ -30,9 +30,10 @@
 
     <section class="section section-technologies">
         <h2 mat-subheader class="mat-subheader-section text-secondary">Technologies</h2>
-        <ul class="text">
+        <ul class="technology-list">
             <li *ngFor="let technology of technologies | async">
-                
+                <img class="technology-image" src="{{ technology.src }}" alt="{{ technology.name }}">
+                <div class="technology-name">{{ technology.name }}</div>
             </li>
         </ul>
     </section>
