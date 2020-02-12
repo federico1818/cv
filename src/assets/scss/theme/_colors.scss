@@ -1,0 +1,8 @@
+@mixin app-colors($theme) {
+    $primary: map-get($theme, primary);
+    
+    .primary {
+        color: mat-color($primary);
+    }
+
+}

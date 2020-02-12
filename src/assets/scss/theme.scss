@@ -2,6 +2,7 @@
 @include mat-core();
 
 
+@import './theme/colors';
 @import './theme/notification-bar';
 @import './theme/dock';
 @import './theme/text';
@@ -52,6 +53,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 @include angular-material-theme($app-theme);
 
+@include app-colors($app-theme);
 @include app-notification-bar($app-theme);
 @include app-dock($app-theme);
 @include app-text($app-theme);
