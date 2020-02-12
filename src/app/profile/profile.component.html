@@ -9,16 +9,33 @@
         </div>
 
         <div class="profile-info">
+            
             <div class="profile-avatar">
                 <img class="profile-avatar-image" src="/assets/img/profile/avatar.jpg" alt="Avatar">
             </div>
+            
             <div class="profile-name primary">
-                Federico González
+                {{ (profile | async)?.name }}
             </div>
+            
             <p class="profile-presentation text-secondary">
-                Trabajo en sistemas con el objetivo de ayudar a mis clientes a mejorar y optimizar sus procesos de negocio. <br>
-                Siempre con la filosofía de centrarme en sus necesidades y labor dentro de la sociedad.
+                {{ (profile | async)?.presentation }}
             </p>
+            
+            <div class="profile-contact">
+                <ul class="profile-contact-list">
+                    <li class="profile-contact-list-item">
+                        <mat-icon>phone</mat-icon>
+                        <span>+54 11 5764-5955</span>
+                    </li>
+                    <li class="profile-contact-list-item">
+                        <mat-icon>email</mat-icon>
+                        <span>federico1818@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+            
         </div>
+
     </div>
 </section>
