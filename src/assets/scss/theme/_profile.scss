@@ -4,4 +4,16 @@
     .profile-avatar {
         border-color: mat-color($primary, default-contrast);
     }
+
+    .profile-contact-list-item {
+        
+        & .mat-icon {
+            color: mat-color($primary, 300);
+        }
+        
+        & .profile-contact-data {
+            color: mat-color($primary, 800);
+        }
+
+    }
 }

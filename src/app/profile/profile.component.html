@@ -24,13 +24,9 @@
             
             <div class="profile-contact">
                 <ul class="profile-contact-list">
-                    <li class="profile-contact-list-item">
-                        <mat-icon>phone</mat-icon>
-                        <span>+54 11 5764-5955</span>
-                    </li>
-                    <li class="profile-contact-list-item">
-                        <mat-icon>email</mat-icon>
-                        <span>federico1818@gmail.com</span>
+                    <li class="profile-contact-list-item" *ngFor="let contact of contacts | async">
+                        <mat-icon>{{ contact.icon }}</mat-icon>
+                        <span class="profile-contact-data">{{ contact.value }}</span>
                     </li>
                 </ul>
             </div>

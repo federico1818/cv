@@ -7,7 +7,7 @@
         <li class="list-item" *ngFor="let study of studies | async">
             <img class="list-item-image" src="{{ study.src }}">
             <div class="list-item-title">{{ study.degree }}</div>
-            <div class="list-item-subtitle list-item-dates">
+            <div class="list-item-subtitle list-item-dates text-secondary">
                 <time class="date-start">{{ study.date_start.toDate() | date: 'yyyy' }}</time>
                 <time class="date-end" *ngIf="study.date_end">{{ study.date_end.toDate() | date: 'yyyy' }}</time>
                 <time class="date-end" *ngIf="!study.date_end">Today</time>
