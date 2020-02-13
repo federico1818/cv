@@ -1,0 +1,7 @@
+@mixin app-profile($theme) {
+    $primary: map-get($theme, primary);
+    
+    .profile-avatar {
+        border-color: mat-color($primary, default-contrast);
+    }
+}

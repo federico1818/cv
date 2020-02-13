@@ -1,3 +1,39 @@
+$custom-primary-color: (
+    50 : #e8e8eb,
+    100 : #c5c5ce,
+    200 : #9f9eae,
+    300 : #79778d,
+    400 : #5c5a74,
+    500 : #3f3d5c,
+    600 : #393754,
+    700 : #312f4a,
+    800 : #292741,
+    900 : #1b1a30,
+    A100 : #7c74ff,
+    A200 : #4b41ff,
+    A400 : #1b0eff,
+    A700 : #0d00f4,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$profile-link-bg-color: #8189E5;
+$profile-link-color: #FFFFFF;
+
 @mixin app-colors($theme) {
     $primary: map-get($theme, primary);
     

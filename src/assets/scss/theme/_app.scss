@@ -1,0 +1,7 @@
+@mixin app-phone($theme) {
+    $primary: map-get($theme, primary);
+    
+    .app {
+        background-color: mat-color($primary, default-contrast);
+    }
+}

@@ -1,4 +1,3 @@
-@import "~src/assets/scss/colors";
 @import "~src/assets/scss/sizes";
 
 .router-outlet-container {
@@ -16,19 +15,7 @@
 }
 
 .phone {
-
-    & {
         height: 100%;
-    }
-
-    &.active .app-navigation-bar {
-        background-color: $navigation-bar-bg-color;
-    }
-
-    // &.active .app-notification-bar {
-    //     background-color: $app-primary-color-dark;
-    // }
-
 }
 
 .screen {

@@ -1,5 +1,3 @@
-@import "~src/assets/scss/colors";
-
 .navigation-bar-list {
 
     & {
@@ -8,7 +6,6 @@
     }
 
     & .navigation-bar-link {
-        color: $color-navigation-icon;
         background-color: transparent;
         box-shadow: none;
     }

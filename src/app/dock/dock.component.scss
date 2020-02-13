@@ -1,4 +1,3 @@
-@import "~src/assets/scss/colors";
 @import "~src/assets/scss/sizes";
 
 .dock-list {
@@ -10,7 +9,6 @@
 .dock-link {
     
     & {
-        background-color: $color-bg-button;
         height: $dock-button-size;
         width: $dock-button-size;
     }
@@ -21,9 +19,4 @@
         justify-content: center;
     }
 
-}
-
-.dock-link-profile {
-    background-color: $profile-link-bg-color;
-    color: $profile-link-color;
 }

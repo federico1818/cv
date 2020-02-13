@@ -4,4 +4,9 @@
     .dock-link.mat-fab {
         color: mat-color($foreground, text);
     }
+
+    .dock-link-profile {
+        background-color: $profile-link-bg-color;
+        color: $profile-link-color;
+    }
 }
