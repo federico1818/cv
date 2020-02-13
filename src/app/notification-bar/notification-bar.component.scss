@@ -1,5 +1,15 @@
 .notification-bar {
-    color: #FFFFFF;
-    font-size: 14px;
-    padding: 0 7px;
+
+    & {
+        color: #FFFFFF;
+        font-size: 14px;
+        padding: 0 7px;
+        column-gap: 1fr;
+    }
+
+    & .app-batery {
+        grid-column: 2;
+        justify-self: flex-end;
+    }
+
 }

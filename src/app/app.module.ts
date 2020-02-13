@@ -22,7 +22,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
-import { ExperienceListComponent } from './experience-list/experience-list.component'
+import { ExperienceListComponent } from './experience-list/experience-list.component';
+import { BatteryComponent } from './battery/battery.component'
+import { BatteryLevelService } from './services/battery-level.service'
 
 @NgModule({
     declarations: [
@@ -38,7 +40,8 @@ import { ExperienceListComponent } from './experience-list/experience-list.compo
         ProfileComponent,
         HobbiesComponent,
         ExperienceDetailComponent,
-        ExperienceListComponent
+        ExperienceListComponent,
+        BatteryComponent
     ],
     imports: [
         BrowserModule,
@@ -49,7 +52,9 @@ import { ExperienceListComponent } from './experience-list/experience-list.compo
         MaterialModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
-    providers: [],
+    providers: [
+        BatteryLevelService
+    ],
     bootstrap: [AppComponent]
 })
 
