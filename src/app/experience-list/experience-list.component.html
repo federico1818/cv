@@ -4,7 +4,7 @@
 
 <ul class="list">
     <li *ngFor="let work of works | async">
-        <a class="list-item-link text-primary" [routerLink]="['./', work.id]">
+        <a class="list-item text-primary" [routerLink]="['./', work.id]">
             <img class="list-item-image" src="{{ work.logo }}" alt="{{ work.company }}">
             <h4 class="list-item-title">{{ work.position }}</h4>
             <div class="list-item-subtitle list-item-dates text-secondary">
@@ -12,7 +12,7 @@
                 <time class="date-end">{{ work.date_end.toDate() | date: 'yyyy' }}</time>
             </div>
             <div class="list-item-description">{{ work.company }}</div>
-            <mat-icon class="list-item-navigation">chevron_right</mat-icon>
+            <mat-icon class="list-item-navigation text-secondary">chevron_right</mat-icon>
         </a>
     </li>
 </ul>

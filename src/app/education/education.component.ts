@@ -13,7 +13,7 @@ import { Study } from '../models/study'
 export class EducationComponent implements OnInit {
     public studies: Observable<Study[]>
     public loading: boolean
-
+    
     private studiesRef: AngularFirestoreCollection
 
     constructor(

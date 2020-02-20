@@ -24,7 +24,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
 import { ExperienceListComponent } from './experience-list/experience-list.component';
 import { BatteryComponent } from './battery/battery.component'
-import { BatteryLevelService } from './services/battery-level.service'
+import { BatteryLevelService } from './services/battery-level.service';
 
 @NgModule({
     declarations: [

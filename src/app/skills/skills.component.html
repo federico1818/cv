@@ -2,4 +2,13 @@
     <mat-toolbar color="primary">
         <span>Skills</span>
     </mat-toolbar>
+
+    <ul class="list list-skills">
+        <li *ngFor="let skill of skills | async">
+            <img class="list-item-image" src="{{ skill.src }}" alt="{{ skill.label }}">
+            <div class="list-item-description">{{ skill.label }}</div>
+        </li>
+    </ul>
+
+    <mat-spinner class="loading" *ngIf="loading" color="accent" diameter="64"></mat-spinner>
 </section>

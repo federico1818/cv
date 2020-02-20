@@ -1,0 +1,25 @@
+.list-skills {
+    display: grid;
+    align-items: end;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.list-item {
+    display: grid;
+    grid-template-columns: initial;
+    grid-template-rows: initial;
+    margin: 0;
+}
+
+.list-item-image {
+    height: 128px;
+    width: 128px;
+}
+
+.list-item-description {
+    text-align: center;
+    margin-top: 8px;
+}
