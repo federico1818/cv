@@ -3,16 +3,16 @@
 </mat-toolbar>
 
 <ul class="list">
-    <li class="list-item" *ngFor="let work of works | async">
-        <img class="list-item-image" src="{{ work.logo }}" alt="{{ work.company }}">
-        <h4 class="list-item-title">{{ work.position }}</h4>
-        <div class="list-item-subtitle list-item-dates text-secondary">
-            <time class="date-start">{{ work.date_start.toDate() | date: 'yyyy' }}</time>
-            <time class="date-end">{{ work.date_end.toDate() | date: 'yyyy' }}</time>
-        </div>
-        <div class="list-item-description">{{ work.company }}</div>
-        <a [routerLink]="['./', work.id]" class="list-item-navigation" mat-icon-button aria-label="Details">
-            <mat-icon>chevron_right</mat-icon>
+    <li *ngFor="let work of works | async">
+        <a class="list-item-link text-primary" [routerLink]="['./', work.id]">
+            <img class="list-item-image" src="{{ work.logo }}" alt="{{ work.company }}">
+            <h4 class="list-item-title">{{ work.position }}</h4>
+            <div class="list-item-subtitle list-item-dates text-secondary">
+                <time class="date-start">{{ work.date_start.toDate() | date: 'yyyy' }}</time>
+                <time class="date-end">{{ work.date_end.toDate() | date: 'yyyy' }}</time>
+            </div>
+            <div class="list-item-description">{{ work.company }}</div>
+            <mat-icon class="list-item-navigation">chevron_right</mat-icon>
         </a>
     </li>
 </ul>
