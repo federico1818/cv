@@ -4,7 +4,7 @@
     </mat-toolbar>
     
     <ul class="list">
-        <li class="list-item" *ngFor="let study of studies | async">
+        <li class="list-item text-primary" *ngFor="let study of studies | async">
             <img class="list-item-image" src="{{ study.src }}">
             <div class="list-item-title">{{ study.degree }}</div>
             <div class="list-item-subtitle list-item-dates text-secondary">
