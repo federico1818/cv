@@ -1,10 +1,10 @@
 .list-skills {
     display: grid;
     align-items: end;
-    grid-template-columns: repeat(2, 1fr);
     grid-gap: 32px;
     margin-right: 16px;
     margin-left: 16px;
+    justify-items: center;
 }
 
 .list-item {
