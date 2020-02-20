@@ -23,11 +23,15 @@ export class EducationComponent implements OnInit {
     ngOnInit() {
         this.loading = true
         this.getStudies()
+            .subscribe(() => {
+                this.loading = false
+            })
     }
     
-    private getStudies(): void {
+    private getStudies(): Observable<Study[]> {
         this.studiesRef = this.db.collection('education', ref => ref.orderBy('date_start', 'desc')) 
-        this.studies = this.studiesRef.snapshotChanges().pipe(
+        
+        return this.studies = this.studiesRef.snapshotChanges().pipe(
             map(actions => actions.map(a => {
                 return Object.assign(new Study, {
                     id: a.payload.doc.id,
@@ -35,7 +39,6 @@ export class EducationComponent implements OnInit {
                 })
             }))
         )
-        this.studies.subscribe(() => this.loading = false)
     }
 
 }
