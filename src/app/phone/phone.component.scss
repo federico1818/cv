@@ -1,41 +1,73 @@
 @import "~src/assets/scss/sizes";
 
 .router-outlet-container {
-    
-    & {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: $height-navigation-bar;
-    }
-
+    position: relative;
+    height: calc(100% + #{ $dock-height });
+    width: 100%;
 }
 
 .app-notification-bar {
     transition: background-color 200ms linear;
+    z-index: 0;
+}
+
+.app-dock {
+    grid-row: 3;
+}
+
+.app-navigation-bar {
+    grid-row: 4;
 }
 
 .phone {
     height: 100%;
     margin: auto;
-    max-width: 480px;
-    max-height: 825px;
+    position: relative;
 }
 
 .screen {
     
     & {
         display: grid;
-        grid-template-rows: $height-notification-bar 1fr 80px $height-navigation-bar;
+        grid-template-rows: $height-notification-bar 1fr $dock-height $height-navigation-bar;
         height: 100%;
         position: relative;
     }
 
-    &.background {
-        background-color: #393D66;;
-        background-image: url('/assets/img/mountain.png');
-        background-size: cover;
-        background-position: center;
+    
+}
+
+.background {
+    background-color: #393D66;;
+    background-image: url('/assets/img/phone/mountain.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 480px) {
+    .case::after {
+        content: "";
+        width: 390px;
+        height: 750px;
+        display: flex;
+        background-image: url('/assets/img/phone/case.png');
+        background-repeat: no-repeat;
+        background-size: auto 750px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
     }
 
+    .phone {
+        max-width: 343px;
+        max-height: 570px;
+        top: 89px;
+        left: 1px;
+    }
 }

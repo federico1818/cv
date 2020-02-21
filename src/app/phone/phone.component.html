@@ -1,12 +1,11 @@
 <div class="phone case" [ngClass]="{ 'active': !isHome() }">
-    <div class="screen background">
+    <div class="screen">
+        <div class="background"></div>
         <app-notification-bar class="app-notification-bar"></app-notification-bar>
-        <main>
-        </main>
-        <app-dock></app-dock>
+        <div [@routeAnimations]="prepareRoute(outlet)" class="router-outlet-container">
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+        <app-dock class="app-dock"></app-dock>
         <app-navigation-bar class="app-navigation-bar"></app-navigation-bar>
-    </div>
-    <div [@routeAnimations]="prepareRoute(outlet)" class="router-outlet-container">
-        <router-outlet #outlet="outlet"></router-outlet>
     </div>
 </div>
