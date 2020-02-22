@@ -7,7 +7,7 @@
         <ul class="list list-skills">
             <li *ngFor="let skill of skills | async">
                 <img class="list-item-image" src="{{ skill.src }}" alt="{{ skill.label }}">
-                <div class="list-item-description">{{ skill.label }}</div>
+                <div class="list-item-description text-description">{{ skill.label }}</div>
             </li>
         </ul>
     
