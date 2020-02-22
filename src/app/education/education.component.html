@@ -3,17 +3,20 @@
         <span>Education</span>
     </mat-toolbar>
     
-    <ul class="list">
-        <li class="list-item text-primary" *ngFor="let study of studies | async">
-            <img class="list-item-image" src="{{ study.src }}">
-            <div class="list-item-title">{{ study.degree }}</div>
-            <div class="list-item-subtitle list-item-dates text-secondary">
-                <time class="date-start">{{ study.date_start.toDate() | date: 'yyyy' }}</time>
-                <time class="date-end" *ngIf="study.date_end">{{ study.date_end.toDate() | date: 'yyyy' }}</time>
-                <time class="date-end" *ngIf="!study.date_end">Today</time>
-            </div>
-        </li>
-    </ul>
-
-    <mat-spinner class="loading" *ngIf="loading" color="accent" diameter="64"></mat-spinner>
+    <div class="app-content">
+        <ul class="list">
+            <li class="list-item text-primary" *ngFor="let study of studies | async">
+                <img class="list-item-image" src="{{ study.src }}">
+                <div class="list-item-title">{{ study.degree }}</div>
+                <div class="list-item-subtitle list-item-dates text-secondary">
+                    <time class="date-start">{{ study.date_start.toDate() | date: 'yyyy' }}</time>
+                    <time class="date-end" *ngIf="study.date_end">{{ study.date_end.toDate() | date: 'yyyy' }}</time>
+                    <time class="date-end" *ngIf="!study.date_end">Today</time>
+                </div>
+                <div class="list-item-description">{{ study.school }}</div>
+            </li>
+        </ul>
+    
+        <mat-spinner class="loading" *ngIf="loading" color="accent" diameter="64"></mat-spinner>
+    </div>
 </section>

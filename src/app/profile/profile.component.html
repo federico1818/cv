@@ -3,35 +3,37 @@
         <span>Profile</span>
     </mat-toolbar>
     
-    <div class="profile">
-        <div class="profile-background">
-            <div class="profile-backgroung-opacity"></div>
+    <div class="app-content">
+        <div class="profile">
+            <div class="profile-background">
+                <div class="profile-backgroung-opacity"></div>
+            </div>
+    
+            <div class="profile-info">
+                
+                <div class="profile-avatar">
+                    <img class="profile-avatar-image" src="/assets/img/profile/avatar.jpg" alt="Avatar">
+                </div>
+                
+                <div class="profile-name primary">
+                    {{ (profile | async)?.name }}
+                </div>
+                
+                <p class="profile-presentation text-secondary">
+                    {{ (profile | async)?.presentation }}
+                </p>
+                
+                <div class="profile-contact">
+                    <ul class="profile-contact-list">
+                        <li class="profile-contact-list-item" *ngFor="let contact of contacts | async">
+                            <mat-icon>{{ contact.icon }}</mat-icon>
+                            <span class="profile-contact-data">{{ contact.value }}</span>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
         </div>
-
-        <div class="profile-info">
-            
-            <div class="profile-avatar">
-                <img class="profile-avatar-image" src="/assets/img/profile/avatar.jpg" alt="Avatar">
-            </div>
-            
-            <div class="profile-name primary">
-                {{ (profile | async)?.name }}
-            </div>
-            
-            <p class="profile-presentation text-secondary">
-                {{ (profile | async)?.presentation }}
-            </p>
-            
-            <div class="profile-contact">
-                <ul class="profile-contact-list">
-                    <li class="profile-contact-list-item" *ngFor="let contact of contacts | async">
-                        <mat-icon>{{ contact.icon }}</mat-icon>
-                        <span class="profile-contact-data">{{ contact.value }}</span>
-                    </li>
-                </ul>
-            </div>
-            
-        </div>
-
     </div>
+
 </section>

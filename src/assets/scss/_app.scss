@@ -1,13 +1,20 @@
 @import "~src/assets/scss/sizes";
 
 .app {
-    & {
-        position: absolute;
-        top: 0; 
-        bottom: 0;
-        left: 0;
-        right: 0;
-        overflow-y: scroll;
-        z-index: 1;
-    }
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: hidden;
+    z-index: 2;
+}
+
+.app-content {
+    overflow-y: auto;
+    max-height: calc(100% - 56px);
+}
+
+.app-content.app-content-sm {
+    max-height: calc(100% - 168px);
 }

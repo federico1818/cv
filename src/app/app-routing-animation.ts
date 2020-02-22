@@ -4,11 +4,12 @@ export const animations = trigger('routeAnimations', [
     transition('* <=> *', [
         query(':enter, :leave', [
             style({
-                position: 'fixed',
-                top: '24px',
+                position: 'absolute',
+                top: 0,
                 left: 0,
                 width: '100%',
-                bottom: '56px',
+                bottom: 0,
+                zIndex: 1
             })
         ], { optional: true }),
         query(':leave', [

@@ -3,12 +3,14 @@
         <span>Hobbies</span>
     </mat-toolbar>
 
-    <ul class="list">
-        <li class="list-item text-primary" *ngFor="let hobby of hobbies | async">
-            <img class="list-item-image" src="{{ hobby.src }}">
-            <div class="list-item-description primary">{{ hobby.label }}</div>
-        </li>
-    </ul>
-
-    <mat-spinner class="loading" *ngIf="loading" color="accent" diameter="64"></mat-spinner>
+    <div class="app-content">
+        <ul class="list">
+            <li class="list-item text-primary" *ngFor="let hobby of hobbies | async">
+                <img class="list-item-image" src="{{ hobby.src }}">
+                <div class="list-item-description primary">{{ hobby.label }}</div>
+            </li>
+        </ul>
+    
+        <mat-spinner class="loading" *ngIf="loading" color="accent" diameter="64"></mat-spinner>
+    </div>
 </section>

@@ -15,27 +15,30 @@
         </mat-toolbar-row>
         <img class="work-image" src="{{ (work | async)?.src }}" alt="{{ (work | async)?.company }}">
     </mat-toolbar>
+
+    <div class="app-content app-content-sm">
+        <section class="section section-projects text">
+            <h2 mat-subheader class="mat-subheader-section text-secondary">Projects</h2>
+            <ul class="text">
+                <li class="project-item" *ngFor="let project of projects | async">
+                    <h3 class="project-name mat-h3">{{ project.name }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                </li>
+            </ul>
+        </section>
     
-    <section class="section section-projects text">
-        <h2 mat-subheader class="mat-subheader-section text-secondary">Projects</h2>
-        <ul class="text">
-            <li class="project-item" *ngFor="let project of projects | async">
-                <h3 class="project-name mat-h3">{{ project.name }}</h3>
-                <p class="project-description">{{ project.description }}</p>
-            </li>
-        </ul>
-    </section>
-
-    <mat-divider></mat-divider>
-
-    <section class="section section-technologies">
-        <h2 mat-subheader class="mat-subheader-section text-secondary">Technologies</h2>
-        <ul class="technology-list">
-            <li *ngFor="let technology of technologies | async">
-                <img class="technology-image" src="{{ technology.src }}" alt="{{ technology.name }}">
-                <div class="technology-name">{{ technology.name }}</div>
-            </li>
-        </ul>
-    </section>
+        <mat-divider></mat-divider>
+    
+        <section class="section section-technologies">
+            <h2 mat-subheader class="mat-subheader-section text-secondary">Technologies</h2>
+            <ul class="technology-list">
+                <li *ngFor="let technology of technologies | async">
+                    <img class="technology-image" src="{{ technology.src }}" alt="{{ technology.name }}">
+                    <div class="technology-name">{{ technology.name }}</div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    
 
 </div>

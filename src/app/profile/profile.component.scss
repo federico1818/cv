@@ -39,6 +39,7 @@
 }
 
 .profile-name {
+    font-size: 17px;
     margin: 16px 0 8px;
 }
 
@@ -52,7 +53,7 @@
 
 .profile-contact {
     margin: 8px 0;
-    width: 80%;
+    width: 60%;
 }
 
 
@@ -67,15 +68,15 @@
     & {
         display: flex;
         align-items: center;
-        font-size: 14px;
+        font-size: 13px;
         letter-spacing: 1px;
     }
 
     & .mat-icon {
         margin-right: 24px;
-        height: 32px;
-        width: 32px;
-        font-size: 32px;
+        height: 24px;
+        width: 24px;
+        font-size: 24px;
     }
 }
 
