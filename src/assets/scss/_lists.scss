@@ -25,8 +25,12 @@
         justify-content: center;
     }
 
-    & .list-item-image-container .list-item-image {
+    .list-education & .list-item-image {
         height: 90%;
+    }
+
+    .list-experience & .list-item-image {
+        width: 90%;
     }
 
     & .list-item-title {

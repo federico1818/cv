@@ -7,6 +7,6 @@ export class Work {
     }
 
     public get logo(): string {
-        return `/assets/img/${ this.icon }`
+        return `/assets/img/experience/list/${ this.icon }`
     }
 }

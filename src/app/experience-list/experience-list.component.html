@@ -2,7 +2,7 @@
     <span>Experience</span>
 </mat-toolbar>
 
-<ul class="list">
+<ul class="list list-experience">
     <li *ngFor="let work of works | async">
         <a class="list-item text-primary" [routerLink]="['./', work.id]">
             <div class="list-item-image-container">
