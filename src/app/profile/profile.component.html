@@ -26,7 +26,10 @@
                 <div class="profile-contact">
                     <ul class="profile-contact-list">
                         <li class="profile-contact-list-item" *ngFor="let contact of contacts | async">
-                            <mat-icon>{{ contact.icon }}</mat-icon>
+                            <a href="{{ contact.href }}" *ngIf="contact.href">
+                                <mat-icon>{{ contact.icon }}</mat-icon>
+                            </a>
+                            <mat-icon *ngIf="!contact.href">{{ contact.icon }}</mat-icon>
                             <span class="profile-contact-data">{{ contact.value }}</span>
                         </li>
                     </ul>
