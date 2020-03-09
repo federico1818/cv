@@ -6,7 +6,9 @@
     <div class="app-content">
         <ul class="list">
             <li class="list-item text-primary" *ngFor="let study of studies | async">
-                <img class="list-item-image" src="{{ study.src }}">
+                <div class="list-item-image-container">
+                    <img class="list-item-image" src="{{ study.src }}">
+                </div> 
                 <div class="list-item-title">{{ study.degree }}</div>
                 <div class="list-item-subtitle list-item-dates text-secondary">
                     <time class="date-start">{{ study.date_start.toDate() | date: 'yyyy' }}</time>

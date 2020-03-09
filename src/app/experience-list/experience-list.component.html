@@ -5,7 +5,9 @@
 <ul class="list">
     <li *ngFor="let work of works | async">
         <a class="list-item text-primary" [routerLink]="['./', work.id]">
-            <img class="list-item-image" src="{{ work.logo }}" alt="{{ work.company }}">
+            <div class="list-item-image-container">
+                <img class="list-item-image" src="{{ work.logo }}" alt="{{ work.company }}">
+            </div>
             <h4 class="list-item-title">{{ work.position }}</h4>
             <div class="list-item-subtitle list-item-dates text-secondary">
                 <time class="date-start">{{ work.date_start.toDate() | date: 'yyyy' }}</time>
