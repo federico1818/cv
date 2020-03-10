@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { AngularFirestore } from '@angular/fire/firestore'
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { Work } from '../models/work'
@@ -13,6 +13,8 @@ import { Work } from '../models/work'
 export class ExperienceListComponent implements OnInit {
     public loading: boolean
     public works: Observable<Work[]>
+
+    private worksRef: AngularFirestoreCollection
     
     constructor(
         private db: AngularFirestore
@@ -20,15 +22,22 @@ export class ExperienceListComponent implements OnInit {
     
     ngOnInit() {
         this.loading = true
-        this.works = this.db.collection('experience').snapshotChanges().pipe(
+        this.getWorks().subscribe(res => {
+            this.loading = false
+        })
+    }
+
+    private getWorks(): Observable<Work[]> {
+        this.worksRef = this.db.collection('experience', ref => ref.orderBy('date_start', 'desc')) 
+
+        return this.works = this.worksRef.snapshotChanges().pipe(
             map(actions => actions.map(a => {
                 return Object.assign(new Work, {
                     id: a.payload.doc.id,
                     ...a.payload.doc.data() as any
                 })
             }))
-        );
-        this.works.subscribe(() => this.loading = false)
+        )
     }
 
 }
