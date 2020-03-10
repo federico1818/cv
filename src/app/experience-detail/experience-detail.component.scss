@@ -35,12 +35,35 @@
 
 .work-image {
     position: absolute;
-    height: 154px;
     left: 0;
     right: 0;
     margin: auto;
-    opacity: 0.6;
-    top: 8px;
+    opacity: 0.8;
+}
+
+.work-image.gc {
+    width: 256px;
+    top: 48px;
+}
+
+.work-image.self {
+    height: 96px;
+    top: 16px;
+}
+
+.work-image.binaria {
+    width: 192px;
+    top: 40px;
+}
+
+.work-image.aboy {
+    width: 192px;
+    top: 32px;
+}
+
+.work-image.everis {
+    height: 128px;
+    top: 16px;
 }
 
 .work-dates {
