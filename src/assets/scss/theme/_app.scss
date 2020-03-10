@@ -1,7 +1,13 @@
 @mixin app-phone($theme) {
     $primary: map-get($theme, primary);
+    $background: map-get($theme, background);
     
     .app {
         background-color: mat-color($primary, default-contrast);
     }
+    
+    .app-content {
+        background-color: mat-color($background, card);
+    }
+
 }

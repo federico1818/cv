@@ -7,6 +7,7 @@
 @import './theme/dock';
 @import './theme/text';
 @import './theme/app';
+@import './theme/body';
 @import './theme/profile';
 
 
@@ -20,6 +21,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 @include angular-material-theme($app-theme);
 
+@include app-body($app-theme);
 @include app-phone($app-theme);
 @include app-colors($app-theme);
 @include app-notification-bar($app-theme);
