@@ -18,7 +18,7 @@
 
     <div class="app-content app-content-sm">
         <section class="section section-projects text">
-            <h2 mat-subheader class="mat-subheader-section text-secondary">Projects</h2>
+            <h2 mat-subheader class="mat-subheader-section text-secondary">Proyectos</h2>
             <ul class="text">
                 <li class="project-item" *ngFor="let project of projects | async">
                     <h3 class="project-name mat-h3">{{ project.name }}</h3>
@@ -30,7 +30,7 @@
         <mat-divider></mat-divider>
     
         <section class="section section-technologies">
-            <h2 mat-subheader class="mat-subheader-section text-secondary">Technologies</h2>
+            <h2 mat-subheader class="mat-subheader-section text-secondary">Tecnologías</h2>
             <ul class="technology-list">
                 <li class="technology-list-item" *ngFor="let technology of technologies | async">
                     <img class="technology-image" src="{{ technology.src }}" alt="{{ technology.name }}">
