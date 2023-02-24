@@ -1,8 +1,9 @@
+@use '~@angular/material' as mat;
 @mixin app-body($theme) {
     $primary: map-get($theme, primary);
     
     body {
-        background-color: mat-color($primary, 400);
+        background-color: mat.get-color-from-palette($primary, 400);
     }
     
 }

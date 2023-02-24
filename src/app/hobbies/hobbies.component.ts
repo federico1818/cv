@@ -13,9 +13,9 @@ import { map } from 'rxjs/operators'
 export class HobbiesComponent implements OnInit {
     public hobbies: Observable<Hobby[]>
     public loading: boolean
-    
+
     private hobbiesRef: AngularFirestoreCollection
-    
+
     constructor(
         private db: AngularFirestore
     ) {}
@@ -23,14 +23,14 @@ export class HobbiesComponent implements OnInit {
     ngOnInit() {
         this.loading = true
         this.getHobbies()
-            .subscribe(() => { 
+            .subscribe(() => {
                 this.loading = false
             })
     }
 
     private getHobbies(): Observable<Hobby[]> {
-        this.hobbiesRef = this.db.collection('hobbies', ref => ref.orderBy('order', 'asc')) 
-        
+        this.hobbiesRef = this.db.collection('hobbies', ref => ref.orderBy('order', 'asc'))
+
         return this.hobbies = this.hobbiesRef.snapshotChanges().pipe(
             map(actions => actions.map(a => {
                 return Object.assign(new Hobby, {

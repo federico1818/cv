@@ -1,10 +1,11 @@
+@use '~@angular/material' as mat;
 @mixin app-dock($theme) {
     $foreground: map-get($theme, foreground);
     $primary: map-get($theme, primary);
 
     .dock-link.mat-fab {
-        background-color: mat-color($primary, default-contrast);
-        color: mat-color($foreground, text);
+        background-color: mat.get-color-from-palette($primary, default-contrast);
+        color: mat.get-color-from-palette($foreground, text);
     }
 
     .dock-link-profile {

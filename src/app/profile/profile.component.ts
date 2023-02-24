@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
         this.getProfile()
         this.getContacts()
     }
-    
+
     private getProfile(): void {
         this.profile = this.profileRef.valueChanges()
     }

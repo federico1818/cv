@@ -15,11 +15,11 @@ export class ExperienceListComponent implements OnInit {
     public works: Observable<Work[]>
 
     private worksRef: AngularFirestoreCollection
-    
+
     constructor(
         private db: AngularFirestore
     ) {}
-    
+
     ngOnInit() {
         this.loading = true
         this.getWorks().subscribe(res => {
@@ -28,7 +28,7 @@ export class ExperienceListComponent implements OnInit {
     }
 
     private getWorks(): Observable<Work[]> {
-        this.worksRef = this.db.collection('experience', ref => ref.orderBy('date_start', 'desc')) 
+        this.worksRef = this.db.collection('experience', ref => ref.orderBy('date_start', 'desc'))
 
         return this.works = this.worksRef.snapshotChanges().pipe(
             map(actions => actions.map(a => {

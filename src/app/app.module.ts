@@ -17,14 +17,14 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { ClockComponent } from './clock/clock.component'
 import { SkillsComponent } from './skills/skills.component'
 import { ExperienceComponent } from './experience/experience.component'
-import { EducationComponent } from './education/education.component';
-import { ProfileComponent } from './profile/profile.component';
-import { HobbiesComponent } from './hobbies/hobbies.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
-import { ExperienceListComponent } from './experience-list/experience-list.component';
+import { EducationComponent } from './education/education.component'
+import { ProfileComponent } from './profile/profile.component'
+import { HobbiesComponent } from './hobbies/hobbies.component'
+import { ServiceWorkerModule } from '@angular/service-worker'
+import { ExperienceDetailComponent } from './experience-detail/experience-detail.component'
+import { ExperienceListComponent } from './experience-list/experience-list.component'
 import { BatteryComponent } from './battery/battery.component'
-import { BatteryLevelService } from './services/battery-level.service';
+import { BatteryLevelService } from './services/battery-level.service'
 
 @NgModule({
     declarations: [

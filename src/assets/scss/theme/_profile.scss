@@ -1,18 +1,19 @@
+@use '~@angular/material' as mat;
 @mixin app-profile($theme) {
     $primary: map-get($theme, primary);
     
     .profile-avatar {
-        border-color: mat-color($primary, default-contrast);
+        border-color: mat.get-color-from-palette($primary, default-contrast);
     }
 
     .profile-contact-list-item {
         
         & .mat-icon {
-            color: mat-color($primary, 300);
+            color: mat.get-color-from-palette($primary, 300);
         }
         
         & .profile-contact-data {
-            color: mat-color($primary, 800);
+            color: mat.get-color-from-palette($primary, 800);
         }
 
     }

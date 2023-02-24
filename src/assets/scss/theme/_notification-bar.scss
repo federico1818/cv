@@ -1,7 +1,8 @@
+@use '~@angular/material' as mat;
 @mixin app-notification-bar($theme) {
     $primary: map-get($theme, primary);
 
     .phone.active .app-notification-bar {
-        background-color: mat-color($primary, 700);
+        background-color: mat.get-color-from-palette($primary, 700);
     }
 }

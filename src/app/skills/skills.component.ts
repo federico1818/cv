@@ -15,7 +15,7 @@ export class SkillsComponent implements OnInit {
     public loading: boolean
 
     private skillsRef: AngularFirestoreCollection
-    
+
     constructor(
         private db: AngularFirestore
     ) {}
@@ -29,7 +29,7 @@ export class SkillsComponent implements OnInit {
     }
 
     private getSkills(): Observable<Skill[]> {
-        this.skillsRef = this.db.collection('skills') 
+        this.skillsRef = this.db.collection('skills')
         return this.skills = this.skillsRef.snapshotChanges().pipe(
             map(actions => actions.map(a => {
                 return Object.assign(new Skill, {

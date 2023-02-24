@@ -1,17 +1,18 @@
+@use '~@angular/material' as mat;
 @mixin app-text($theme) {
-    $config: mat-typography-config();
+    $config: mat.define-typography-config();
     $foreground: map-get($theme, foreground);
 
     .text {
-        font-family: mat-font-family($config);
+        font-family: mat.font-family($config);
     }
 
     .text-primary {
-        color: mat-color($foreground, text);
+        color: mat.get-color-from-palette($foreground, text);
     }
 
     .text-secondary {
-        color: mat-color($foreground, secondary-text);
+        color: mat.get-color-from-palette($foreground, secondary-text);
     }
 
     .mat-subheader-section {

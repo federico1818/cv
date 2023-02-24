@@ -13,13 +13,13 @@ import { Study } from '../models/study'
 export class EducationComponent implements OnInit {
     public studies: Observable<Study[]>
     public loading: boolean
-    
+
     private studiesRef: AngularFirestoreCollection
 
     constructor(
         private db: AngularFirestore
     ) {}
-    
+
     ngOnInit() {
         this.loading = true
         this.getStudies()
@@ -27,10 +27,10 @@ export class EducationComponent implements OnInit {
                 this.loading = false
             })
     }
-    
+
     private getStudies(): Observable<Study[]> {
-        this.studiesRef = this.db.collection('education', ref => ref.orderBy('date_start', 'desc')) 
-        
+        this.studiesRef = this.db.collection('education', ref => ref.orderBy('date_start', 'desc'))
+
         return this.studies = this.studiesRef.snapshotChanges().pipe(
             map(actions => actions.map(a => {
                 return Object.assign(new Study, {

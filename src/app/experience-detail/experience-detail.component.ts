@@ -38,7 +38,7 @@ export class ExperienceDetailComponent implements OnInit {
             map(w => {
                 return Object.assign(new Work, {
                     id: w.payload.id,
-                    ...w.payload.data()     
+                    ...w.payload.data()
                 })
             })
         )

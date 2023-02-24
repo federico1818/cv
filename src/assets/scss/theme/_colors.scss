@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 $custom-primary-color: (
     50 : #e8e8eb,
     100 : #c5c5ce,
@@ -38,6 +39,6 @@ $profile-link-color: #FFFFFF;
     $primary: map-get($theme, primary);
     
     .primary {
-        color: mat-color($primary);
+        color: mat.get-color-from-palette($primary);
     }
 }
